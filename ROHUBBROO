@@ -1,0 +1,621 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local ESP = Instance.new("TextButton")
+local Silent = Instance.new("TextButton")
+local Inf = Instance.new("TextButton")
+local Tracers = Instance.new("TextButton")
+local TextLabel_2 = Instance.new("TextLabel")
+local TextLabel_3 = Instance.new("TextLabel")
+local hitbox = Instance.new("TextButton")
+local ImageLabel = Instance.new("ImageLabel")
+local ImageLabel_2 = Instance.new("ImageLabel")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
+Frame.Position = UDim2.new(0.527885854, 0, 0.0769230798, 0)
+Frame.Size = UDim2.new(0, 249, 0, 331)
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(-0.00401607156, 0, 0.845921457, 0)
+TextLabel.Size = UDim2.new(0, 200, 0, 50)
+TextLabel.ZIndex = 2
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "RoHub"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextTransparency = 0.820
+TextLabel.TextWrapped = true
+
+ESP.Name = "ESP"
+ESP.Parent = Frame
+ESP.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+ESP.BorderSizePixel = 0
+ESP.Position = UDim2.new(0.0401606411, 0, 0.114803627, 0)
+ESP.Size = UDim2.new(0, 94, 0, 26)
+ESP.Font = Enum.Font.SourceSans
+ESP.Text = "ESP"
+ESP.TextColor3 = Color3.fromRGB(255, 142, 29)
+ESP.TextScaled = true
+ESP.TextSize = 14.000
+ESP.TextWrapped = true
+
+Silent.Name = "Silent"
+Silent.Parent = Frame
+Silent.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+Silent.BorderSizePixel = 0
+Silent.Position = UDim2.new(0.0401606411, 0, 0.220543802, 0)
+Silent.Size = UDim2.new(0, 94, 0, 26)
+Silent.Font = Enum.Font.SourceSans
+Silent.Text = "Silent aim"
+Silent.TextColor3 = Color3.fromRGB(255, 142, 29)
+Silent.TextScaled = true
+Silent.TextSize = 14.000
+Silent.TextWrapped = true
+
+Inf.Name = "Inf"
+Inf.Parent = Frame
+Inf.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+Inf.BorderSizePixel = 0
+Inf.Position = UDim2.new(0.0401606262, 0, 0.314199388, 0)
+Inf.Size = UDim2.new(0, 94, 0, 26)
+Inf.Font = Enum.Font.SourceSans
+Inf.Text = "Inf jump"
+Inf.TextColor3 = Color3.fromRGB(255, 142, 29)
+Inf.TextScaled = true
+Inf.TextSize = 14.000
+Inf.TextWrapped = true
+
+Tracers.Name = "Tracers"
+Tracers.Parent = Frame
+Tracers.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+Tracers.BorderSizePixel = 0
+Tracers.Position = UDim2.new(0.040160656, 0, 0.42598182, 0)
+Tracers.Size = UDim2.new(0, 108, 0, 49)
+Tracers.Font = Enum.Font.SourceSans
+Tracers.Text = "Tracers(press Q for on/off)"
+Tracers.TextColor3 = Color3.fromRGB(255, 142, 29)
+Tracers.TextScaled = true
+Tracers.TextSize = 14.000
+Tracers.TextWrapped = true
+
+TextLabel_2.Parent = Frame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Position = UDim2.new(0.092369467, 0, -0.0362537503, 0)
+TextLabel_2.Size = UDim2.new(0, 200, 0, 50)
+TextLabel_2.ZIndex = 2
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = "Arsenal"
+TextLabel_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextTransparency = 0.820
+TextLabel_2.TextWrapped = true
+
+TextLabel_3.Parent = Frame
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.BackgroundTransparency = 1.000
+TextLabel_3.Position = UDim2.new(-0.144578308, 0, 0.961335957, 0)
+TextLabel_3.Size = UDim2.new(0, 200, 0, 12)
+TextLabel_3.Font = Enum.Font.SourceSans
+TextLabel_3.Text = "RIght ctrl to close/open"
+TextLabel_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_3.TextSize = 14.000
+
+hitbox.Name = "hitbox"
+hitbox.Parent = Frame
+hitbox.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+hitbox.BorderSizePixel = 0
+hitbox.Position = UDim2.new(0.0401606262, 0, 0.592144966, 0)
+hitbox.Size = UDim2.new(0, 94, 0, 26)
+hitbox.Font = Enum.Font.SourceSans
+hitbox.Text = "Extend hitbox"
+hitbox.TextColor3 = Color3.fromRGB(255, 142, 29)
+hitbox.TextScaled = true
+hitbox.TextSize = 14.000
+hitbox.TextWrapped = true
+
+ImageLabel.Parent = Frame
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.Position = UDim2.new(-0.00353158242, 0, 0.807257414, 0)
+ImageLabel.Size = UDim2.new(0, 249, 0, 63)
+ImageLabel.Image = "http://www.roblox.com/asset/?id=6512193716"
+ImageLabel.ImageColor3 = Color3.fromRGB(255, 142, 29)
+
+ImageLabel_2.Parent = Frame
+ImageLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel_2.BackgroundTransparency = 1.000
+ImageLabel_2.Position = UDim2.new(-0.00401606411, 0, 0, 0)
+ImageLabel_2.Size = UDim2.new(0, 251, 0, 73)
+ImageLabel_2.Image = "http://www.roblox.com/asset/?id=6512186778"
+ImageLabel_2.ImageColor3 = Color3.fromRGB(255, 142, 29)
+
+-- Scripts:
+
+local function YKHFHN_fake_script() -- Frame.Keybind Script 
+	local script = Instance.new('LocalScript', Frame)
+
+	local frame = script.Parent.Parent.Frame -- Make this you frame Name!
+	local hotkey = Enum.KeyCode.RightControl -- Make this whatever you want your keybind to be! 
+	
+	local UIS = game:GetService("UserInputService")
+	local open = false
+	
+	
+	
+	UIS.InputBegan:Connect(function(key, gp)
+	 if key.KeyCode == hotkey then
+	  if UIS:GetFocusedTextBox() == nil then
+	   if open == false then
+	    open = true 
+	    frame.Visible = open
+	   elseif open == true then
+	    open = false
+	    frame.Visible = open
+	   end
+	  end
+	 end
+	end)
+	
+end
+coroutine.wrap(YKHFHN_fake_script)()
+local function FRJPKKW_fake_script() -- ESP.Script 
+	local script = Instance.new('Script', ESP)
+
+	ESP.MouseButton1Down:connect(function()
+		-- -----------------------------------
+		--  ___      _   _   _              --
+		-- / __| ___| |_| |_(_)_ _  __ _ ___--
+		-- \__ \/ -_)  _|  _| | ' \/ _` (_-<--
+		-- |___/\___|\__|\__|_|_||_\__, /__/--
+		--                         |___/    --
+		-- -----------------------------------
+		-- -----------------------------------
+		ALLYCOLOR = {0,255,255}  	--//Color of the ESP  of people on the same team
+		ENEMYCOLOR =  {255,0,0} 	--//Color of the ESP  of people on NOT the same team
+		TRANSPARENCY = 0.5			--//Transparency of the ESP
+		HEALTHBAR_ACTIVATED = true 	--//Renders the Healthbar
+		--
+		--
+	
+		--							!!!Don't Change Anything Below Here Unless You Know What You're Doing!!!
+	
+		function createFlex()
+			-- -----------------------------------------------------------------------------------
+			--[VARIABLES] //Changing may result in Errors!
+			players = game:GetService("Players") --//Required for PF
+			faces = {"Front","Back","Bottom","Left","Right","Top"} --//Every possible Enum face
+			currentPlayer = nil --//Used for the Team-Check
+			lplayer = players.LocalPlayer --//The LocalPlayer
+			-- -----------------------------------------------------------------------------------
+			players.PlayerAdded:Connect(function(p)
+				currentPlayer = p
+				p.CharacterAdded:Connect(function(character) --//For when a new Player joins the game 
+					createESP(character)			
+				end)		
+			end)
+			-- -----------------------------------------------------------------------------------
+			function checkPart(obj)  if (obj:IsA("Part") or obj:IsA("MeshPart")) and obj.Name~="HumanoidRootPart" then return true end end --//Check if the Part is suitable 
+			-- -----------------------------------------------------------------------------------
+			function actualESP(obj) 
+	
+				for i=0,5 do
+					surface = Instance.new("SurfaceGui",obj) --//Creates the SurfaceGui
+					surface.Face = Enum.NormalId[faces[i+1]] --//Adjusts the Face and chooses from the face table
+					surface.AlwaysOnTop = true
+	
+					frame = Instance.new("Frame",surface)	--//Creates the viewable Frame
+					frame.Size = UDim2.new(1,0,1,0)
+					frame.BorderSizePixel = 0												
+					frame.BackgroundTransparency = TRANSPARENCY
+					if currentPlayer.Team == players.LocalPlayer.Team then --//Checks the Players Team
+						frame.BackgroundColor3 = Color3.new(ALLYCOLOR[1],ALLYCOLOR[2],ALLYCOLOR[3])	--//If in same Team											
+					else
+						frame.BackgroundColor3 = Color3.new(ENEMYCOLOR[1],ENEMYCOLOR[2],ENEMYCOLOR[3])	--//If in another Team
+					end
+	
+				end
+			end
+			-- -----------------------------------------------------------------------------------
+			function createHealthbar(hrp) 
+				board =Instance.new("BillboardGui",hrp) --//Creates the BillboardGui with HumanoidRootPart as the Parent
+				board.Name = "total"
+				board.Size = UDim2.new(1,0,1,0)
+				board.StudsOffset = Vector3.new(3,1,0)
+				board.AlwaysOnTop = true
+	
+				bar = Instance.new("Frame",board) --//Creates the red background
+				bar.BackgroundColor3 = Color3.new(255,0,0)
+				bar.BorderSizePixel = 0
+				bar.Size = UDim2.new(0.2,0,4,0)
+				bar.Name = "total2"
+	
+				health = Instance.new("Frame",bar) --//Creates the changing green Frame
+				health.BackgroundColor3 = Color3.new(0,255,0)
+				health.BorderSizePixel = 0
+				health.Size = UDim2.new(1,0,hrp.Parent.Humanoid.Health/100,0)
+				hrp.Parent.Humanoid.Changed:Connect(function(property) --//Triggers when any Property changed
+					hrp.total.total2.Frame.Size = UDim2.new(1,0,hrp.Parent.Humanoid.Health/100,0) --//Adjusts the size of the green Frame								
+				end)
+			end
+			-- -----------------------------------------------------------------------------------
+			function createESP(c) --//Checks and calls the proper function
+				bugfix = c:WaitForChild("Head") --// *Used so the children of the character arent nil.
+				for i,v in pairs(c:GetChildren()) do
+					if checkPart(v) then
+						actualESP(v)
+					end
+				end
+				if HEALTHBAR_ACTIVATED then --//If the user decided to
+					createHealthbar(c:WaitForChild("HumanoidRootPart")) --//Calls the function of the creation
+				end
+			end
+			-- -----------------------------------------------------------------------------------
+			for i,people in pairs(players:GetChildren())do
+				if people ~= players.LocalPlayer then
+					currentPlayer = people
+					--//Used for Players already in the Game
+					createESP(people.Character)
+					people.CharacterAdded:Connect(function(character)
+						createESP(character)			
+					end)
+				end
+			end
+			-- -----------------------------------------------------------------------------------
+		end --//End of the entire function
+	
+		createFlex() --// Does exactly that :)
+	end)
+end
+coroutine.wrap(FRJPKKW_fake_script)()
+local function CAOJMQD_fake_script() -- Silent.Script 
+	local script = Instance.new('Script', Silent)
+
+	Silent.MouseButton1Down:connect(function()
+		local CurrentCamera = workspace.CurrentCamera
+		local Players = game.GetService(game, "Players")
+		local LocalPlayer = Players.LocalPlayer
+		local Mouse = LocalPlayer:GetMouse()
+		function ClosestPlayer()
+			local MaxDist, Closest = math.huge
+			for I,V in pairs(Players.GetPlayers(Players)) do
+				if V == LocalPlayer then continue end
+				if V.Team == LocalPlayer then continue end
+				if not V.Character then continue end
+				local Head = V.Character.FindFirstChild(V.Character, "Head")
+				if not Head then continue end
+				local Pos, Vis = CurrentCamera.WorldToScreenPoint(CurrentCamera, Head.Position)
+				if not Vis then continue end
+				local MousePos, TheirPos = Vector2.new(Mouse.X, Mouse.Y), Vector2.new(Pos.X, Pos.Y)
+				local Dist = (TheirPos - MousePos).Magnitude
+				if Dist < MaxDist then
+					MaxDist = Dist
+					Closest = V
+					print("working")
+				end
+			end
+			return Closest
+		end
+		local MT = getrawmetatable(game)
+		local OldNC = MT.__namecall
+		local OldIDX = MT.__index
+		setreadonly(MT, false)
+		MT.__namecall = newcclosure(function(self, ...)
+			local Args, Method = {...}, getnamecallmethod()
+			if Method == "FindPartOnRayWithIgnoreList" and not checkcaller() then
+				local CP = ClosestPlayer()
+				if CP and CP.Character and CP.Character.FindFirstChild(CP.Character, "Head") then
+					Args[1] = Ray.new(CurrentCamera.CFrame.Position, (CP.Character.Head.Position - CurrentCamera.CFrame.Position).Unit * 1000)
+					return OldNC(self, unpack(Args))
+				end
+			end
+			return OldNC(self, ...)
+		end)
+		MT.__index = newcclosure(function(self, K)
+			if K == "Clips" then
+				return workspace.Map
+			end
+			return OldIDX(self, K)
+		end)
+		setreadonly(MT, true)
+	end)
+	
+end
+coroutine.wrap(CAOJMQD_fake_script)()
+local function STUYTW_fake_script() -- Inf.Script 
+	local script = Instance.new('Script', Inf)
+
+	Inf.MouseButton1Down:connect(function()
+		game:GetService("UserInputService").JumpRequest:connect(function()
+			game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")		
+		end)
+	end)
+end
+coroutine.wrap(STUYTW_fake_script)()
+local function IOAGXQ_fake_script() -- Tracers.Script 
+	local script = Instance.new('Script', Tracers)
+
+	Tracers.MouseButton1Down:connect(function()
+		local function API_Check()
+			if Drawing == nil then
+				return "No"
+			else
+				return "Yes"
+			end
+		end
+	
+		local Find_Required = API_Check()
+	
+		if Find_Required == "No" then
+			game:GetService("StarterGui"):SetCore("SendNotification",{
+				Title = "RoHub Developer";
+				Text = "Tracer script could not be loaded because your exploit is unsupported.";
+				Duration = math.huge;
+				Button1 = "OK"
+			})
+	
+			return
+		end
+	
+		local RunService = game:GetService("RunService")
+		local Players = game:GetService("Players")
+		local Camera = game:GetService("Workspace").CurrentCamera
+		local UserInputService = game:GetService("UserInputService")
+		local TestService = game:GetService("TestService")
+	
+		local Typing = false
+	
+		_G.SendNotifications = true   -- If set to true then the script would notify you frequently on any changes applied and when loaded / errored. (If a game can detect this, it is recommended to set it to false)
+		_G.DefaultSettings = false   -- If set to true then the tracer script would run with default settings regardless of any changes you made.
+	
+		_G.TeamCheck = false   -- If set to true then the script would create tracers only for the enemy team members.
+	
+		--[!]-- ONLY ONE OF THESE VALUES SHOULD BE SET TO TRUE TO NOT ERROR THE SCRIPT --[!]--
+	
+		_G.FromMouse = false   -- If set to true, the tracers will come from the position of your mouse curson on your screen.
+		_G.FromCenter = false   -- If set to true, the tracers will come from the center of your screen.
+		_G.FromBottom = true   -- If set to true, the tracers will come from the bottom of your screen.
+	
+		_G.TracersVisible = true   -- If set to true then the tracers will be visible and vice versa.
+		_G.TracerColor = Color3.fromRGB(255, 80, 10)   -- The color that the tracers would appear as.
+		_G.TracerThickness = 1   -- The thickness of the tracers.
+		_G.TracerTransparency = 0.7   -- The transparency of the tracers.
+	
+		_G.ModeSkipKey = Enum.KeyCode.E   -- The key that changes between modes that indicate where will the tracers come from.
+		_G.DisableKey = Enum.KeyCode.Q   -- The key that disables / enables the tracers.
+	
+		local function CreateTracers()
+			for _, v in next, Players:GetPlayers() do
+				if v.Name ~= game.Players.LocalPlayer.Name then
+					local TracerLine = Drawing.new("Line")
+	
+					RunService.RenderStepped:Connect(function()
+						if workspace:FindFirstChild(v.Name) ~= nil and workspace[v.Name]:FindFirstChild("HumanoidRootPart") ~= nil then
+							local HumanoidRootPart_Position, HumanoidRootPart_Size = workspace[v.Name].HumanoidRootPart.CFrame, workspace[v.Name].HumanoidRootPart.Size * 1
+							local Vector, OnScreen = Camera:WorldToViewportPoint(HumanoidRootPart_Position * CFrame.new(0, -HumanoidRootPart_Size.Y, 0).p)
+	
+							TracerLine.Thickness = _G.TracerThickness
+							TracerLine.Transparency = _G.TracerTransparency
+							TracerLine.Color = _G.TracerColor
+	
+							if _G.FromMouse == true and _G.FromCenter == false and _G.FromBottom == false then
+								TracerLine.From = Vector2.new(UserInputService:GetMouseLocation().X, UserInputService:GetMouseLocation().Y)
+							elseif _G.FromMouse == false and _G.FromCenter == true and _G.FromBottom == false then
+								TracerLine.From = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2)
+							elseif _G.FromMouse == false and _G.FromCenter == false and _G.FromBottom == true then
+								TracerLine.From = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y)
+							end
+	
+							if OnScreen == true  then
+								TracerLine.To = Vector2.new(Vector.X, Vector.Y)
+								if _G.TeamCheck == true then 
+									if Players.LocalPlayer.Team ~= v.Team then
+										TracerLine.Visible = _G.TracersVisible
+									else
+										TracerLine.Visible = false
+									end
+								else
+									TracerLine.Visible = _G.TracersVisible
+								end
+							else
+								TracerLine.Visible = false
+							end
+						else
+							TracerLine.Visible = false
+						end
+					end)
+	
+					Players.PlayerRemoving:Connect(function()
+						TracerLine.Visible = false
+					end)
+				end
+			end
+	
+			Players.PlayerAdded:Connect(function(Player)
+				Player.CharacterAdded:Connect(function(v)
+					if v.Name ~= game.Players.LocalPlayer.Name then
+						local TracerLine = Drawing.new("Line")
+	
+						RunService.RenderStepped:Connect(function()
+							if workspace:FindFirstChild(v.Name) ~= nil and workspace[v.Name]:FindFirstChild("HumanoidRootPart") ~= nil then
+								local HumanoidRootPart_Position, HumanoidRootPart_Size = workspace[v.Name].HumanoidRootPart.CFrame, workspace[v.Name].HumanoidRootPart.Size * 1
+								local Vector, OnScreen = Camera:WorldToViewportPoint(HumanoidRootPart_Position * CFrame.new(0, -HumanoidRootPart_Size.Y, 0).p)
+	
+								TracerLine.Thickness = _G.TracerThickness
+								TracerLine.Transparency = _G.TracerTransparency
+								TracerLine.Color = _G.TracerColor
+	
+								if _G.FromMouse == true and _G.FromCenter == false and _G.FromBottom == false then
+									TracerLine.From = Vector2.new(UserInputService:GetMouseLocation().X, UserInputService:GetMouseLocation().Y)
+								elseif _G.FromMouse == false and _G.FromCenter == true and _G.FromBottom == false then
+									TracerLine.From = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2)
+								elseif _G.FromMouse == false and _G.FromCenter == false and _G.FromBottom == true then
+									TracerLine.From = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y)
+								end
+	
+								if OnScreen == true  then
+									TracerLine.To = Vector2.new(Vector.X, Vector.Y)
+									if _G.TeamCheck == true then 
+										if Players.LocalPlayer.Team ~= Player.Team then
+											TracerLine.Visible = _G.TracersVisible
+										else
+											TracerLine.Visible = false
+										end
+									else
+										TracerLine.Visible = _G.TracersVisible
+									end
+								else
+									TracerLine.Visible = false
+								end
+							else
+								TracerLine.Visible = false
+							end
+						end)
+	
+						Players.PlayerRemoving:Connect(function()
+							TracerLine.Visible = false
+						end)
+					end
+				end)
+			end)
+		end
+	
+		UserInputService.TextBoxFocused:Connect(function()
+			Typing = true
+		end)
+	
+		UserInputService.TextBoxFocusReleased:Connect(function()
+			Typing = false
+		end)
+	
+		UserInputService.InputBegan:Connect(function(Input)
+			if Input.KeyCode == _G.ModeSkipKey and Typing == false then
+				if _G.FromMouse == true and _G.FromCenter == false and _G.FromBottom == false and _G.TracersVisible == true then
+					_G.FromCenter = false
+					_G.FromBottom = true
+					_G.FromMouse = false
+	
+					if _G.SendNotifications == true then
+						game:GetService("StarterGui"):SetCore("SendNotification",{
+							Title = "RoHub Developer";
+							Text = "Tracers will be now coming from the bottom of your screen (Mode 1)";
+							Duration = 5;
+						})
+					end
+				elseif _G.FromMouse == false and _G.FromCenter == false and _G.FromBottom == true and _G.TracersVisible == true then
+					_G.FromCenter = true
+					_G.FromBottom = false
+					_G.FromMouse = false
+	
+					if _G.SendNotifications == true then
+						game:GetService("StarterGui"):SetCore("SendNotification",{
+							Title = "Rohub Developer";
+							Text = "Tracers will be now coming from the center of your screen (Mode 2)";
+							Duration = 5;
+						})
+					end
+				elseif _G.FromMouse == false and _G.FromCenter == true and _G.FromBottom == false and _G.TracersVisible == true then
+					_G.FromCenter = false
+					_G.FromBottom = false
+					_G.FromMouse = true
+	
+					if _G.SendNotifications == true then
+						game:GetService("StarterGui"):SetCore("SendNotification",{
+							Title = "RoHub Developer";
+							Text = "Tracers will be now coming from the position of your mouse cursor on your screen (Mode 3)";
+							Duration = 5;
+						})
+					end
+				end
+			elseif Input.KeyCode == _G.DisableKey and Typing == false then
+				_G.TracersVisible = not _G.TracersVisible
+	
+				if _G.SendNotifications == true then
+					game:GetService("StarterGui"):SetCore("SendNotification",{
+						Title = "RoHub Developer";
+						Text = "The tracers' visibility is now set to "..tostring(_G.TracersVisible)..".";
+						Duration = 5;
+					})
+				end
+			end
+		end)
+	
+		if _G.DefaultSettings == true then
+			_G.TeamCheck = false
+			_G.FromMouse = false
+			_G.FromCenter = false
+			_G.FromBottom = true
+			_G.TracersVisible = true
+			_G.TracerColor = Color3.fromRGB(40, 90, 255)
+			_G.TracerThickness = 1
+			_G.TracerTransparency = 0.5
+			_G.ModeSkipKey = Enum.KeyCode.E
+			_G.DisableKey = Enum.KeyCode.Q
+		end
+	
+		local Success, Errored = pcall(function()
+			CreateTracers()
+		end)
+	
+		if Success and not Errored then
+			if _G.SendNotifications == true then
+				game:GetService("StarterGui"):SetCore("SendNotification",{
+					Title = "RoHub Developer";
+					Text = "Tracer script has successfully loaded.";
+					Duration = 5;
+				})
+			end
+		elseif Errored and not Success then
+			if _G.SendNotifications == true then
+				game:GetService("StarterGui"):SetCore("SendNotification",{
+					Title = "RoHub Developer";
+					Text = "Tracer script has errored while loading, please check the developer console! (F9)";
+					Duration = 5;
+				})
+			end
+			TestService:Message("The tracer script has errored, please notify Dev_Hexry#1219 with the following information :")
+			warn(Errored)
+			print("!! IF THE ERROR IS A FALSE POSITIVE (says that a player cannot be found) THEN DO NOT BOTHER !!")
+		end
+	end)
+end
+coroutine.wrap(IOAGXQ_fake_script)()
+local function JNINGMY_fake_script() -- hitbox.Script 
+	local script = Instance.new('Script', hitbox)
+
+	hitbox.MouseButton1Down:connect(function()
+		_G.HeadSize = 20
+		_G.Disabled = true
+	
+		game:GetService('RunService').RenderStepped:connect(function()
+			if _G.Disabled then
+				for i,v in next, game:GetService('Players'):GetPlayers() do
+					if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+						pcall(function()
+							v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+							v.Character.HumanoidRootPart.Transparency = 0.7
+							v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
+							v.Character.HumanoidRootPart.Material = "Neon"
+							v.Character.HumanoidRootPart.CanCollide = false
+						end)
+					end
+				end
+			end
+		end)
+	end)
+end
+coroutine.wrap(JNINGMY_fake_script)()
